@@ -1,0 +1,23 @@
+nav{
+    background-color: black;
+}
+
+nav h2{
+    color: white;
+    display: inline-block;
+}
+
+nav ul{
+    list-style: none;
+    color: white;
+    margin: 0;
+    padding: 0 12px;
+
+}
+nav ul li{
+    display: inline-block;
+    margin: 20px;
+}
+Link{
+    text-decoration: none;
+}

@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import "./News.css";
+// import Articles from "./articles";
+
+
 require("dotenv").config();
 
 class News extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             articles : [],
             loading: false,
@@ -20,7 +23,7 @@ class News extends Component{
         this.setState({
             loading: true
         })
-        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_API_KEY1}&page=${this.state.page}&pageSize=${this.state.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=${process.env.REACT_APP_API_KEY1}&page=${this.state.page}&pageSize=${this.state.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json();
         this.setState({
@@ -44,28 +47,23 @@ class News extends Component{
         }, async () => {
             await this.fetchNews();
         });
-        // await this.fetchNews();
     }
     
     async componentDidMount(){
-        await this.fetchNews();
         this.setState({
             maxPage: Math.ceil(this.state.totalArticles/this.state.pageSize)
         });
-        // console.log("max pages", this.state.maxPage);
-        // console.log("total articles", this.state.totalArticles);
-        // console.log("page size", this.state.pageSize);
+        await this.fetchNews();
     }
 
 
     render(){
         return(
             <>
-                <h1 className="app-title">News App</h1>
                 {
                     !this.state.loading
                     ? <div className="news-container">
-                        <h5>{this.state.totalArticles} Articles</h5>
+                            <h5>{this.state.totalArticles} {this.props.category} Articles</h5>
                         {
                                 // this.state.articles
                                 this.state.articles.map((article)=>{
@@ -78,7 +76,7 @@ class News extends Component{
                             <button disabled ={this.state.page >= this.state.maxPage} onClick={this.handleNext} className="btn next" >NEXT</button>
                         </div>
                      </div>
-                    : <h4>Loading...</h4>
+                    : <h4 className="loading">Loading...</h4>
                 }
             </>
         );

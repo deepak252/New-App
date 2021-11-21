@@ -1,10 +1,10 @@
 body{
-  background-color: rgb(55, 55, 55);
+  background-color: #0d141b;
   /* background-image: url("./bg.jpg"); */
   background-size: 100%;
 }
 
-.App {
+.app-body {
   text-align: center;
 }
 

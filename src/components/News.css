@@ -43,6 +43,11 @@
     color: rgb(37, 37, 37);
 }
 
+.loading{
+    color: white;
+    padding-top: 30%;
+}
+
 @media screen and (max-width: 900px){
    .news-container{
         width: 90%;

@@ -2,29 +2,63 @@
     background-color: white;
     width: 30%;
     box-sizing: border-box;
-    box-shadow: 8px 6px 10px grey;
+    box-shadow: 4px 4px 10px grey;
     display: inline-block;
-    padding: 8px;
-    margin: 10px;
-}
+    /* padding: 8px; */
+    margin: 12px;
+    position: relative;
 
-.card-heading{
+}
+.card-body{
+    padding: 6px;
+}
+img{
+    width: 100%;
+    height: 150px;
+    border-bottom-right-radius:50px;
+}
+.source{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 4px;
+    margin: 0;
+    color: white;
+    background-color: rgb(255, 123, 0);
+
+}
+.title{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
 }
-.card-description{
+.description{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 4; /* number of lines to show */
     -webkit-box-orient: vertical;
 }
-img{
-    width: 100%;
-    height: 150px;
+
+.read-more{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(0, 153, 224);
+    padding: 6px;
+    margin: 10px;
+    float: right;
+    
+}
+.published-at{
+    color:rgb(27, 26, 26);
+    font-size: 12px;
+    /* float: right; */
+    margin: 6px 2px;
+    position: absolute;
+    right: 0px;
+
 }
 
 @media screen and (max-width:900px) {
