@@ -4,7 +4,7 @@
 }
 
 .news-container{
-    width: 70%;
+    width: 80%;
     margin: auto;
 }
 
@@ -45,7 +45,7 @@
 
 .loading{
     color: white;
-    padding-top: 30%;
+    padding: 5% 0;
 }
 
 @media screen and (max-width: 900px){
